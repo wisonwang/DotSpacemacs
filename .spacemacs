@@ -52,6 +52,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     org-blog
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -59,7 +60,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       blog-admin
-                                      org-page
+                                      org-blog
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
