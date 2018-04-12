@@ -50,7 +50,7 @@ Each entry is either:
     - :excluded (t or nil): Prevent the package from being loaded
       if value is non-nil
 
-    - :location: Specify a custom installation location.
+    - :location: Specify a custom instalorg2nikolalation location.
       The following values are legal:
 
       - The symbol `elpa' (default) means PACKAGE will be
@@ -66,7 +66,9 @@ Each entry is either:
 
 
 (defun org-blog/init-blog-admin ()
-  "Initialize blog-admin https://github.com/CodeFalling/blog-admin"
+  "Initialize blog-admin https://github.com/CodeFalling/blog-admin
+                         https://qiwulun.github.io/posts/%E7%94%A8%20Nikola%20%E5%86%99%E5%8D%9A%E5%AE%A2.html
+  "
   (use-package blog-admin
     :defer t
     :commands blog-admin-start
@@ -80,7 +82,7 @@ Each entry is either:
       (setq blog-admin-backend-path "~/myblog")
       (setq blog-admin-backend-new-post-in-drafts t)
       (setq blog-admin-backend-nikola-executable "~/.virtualenvs/python3/bin/nikola") ;; path to nikola executable
-      (setq blog-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
+      (setq bloorg-nikolag-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
 
       (add-hook 'blog-admin-backend-after-new-post-hook 'find-file)
       )
