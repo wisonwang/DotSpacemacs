@@ -1,7 +1,6 @@
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -27,25 +26,18 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layhadoopers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.emacs.d/private")
+   dotspacemacs-configuration-layer-path (list (expand-file-name "./private/" (file-name-directory load-file-name)))
    ;; List of projectileconfiguration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nginx
      csv
      php
      html
      yaml
      javascript
-     (python :variables python-test-runner '(pytest nose)
-             python-fill-column 99
-             python-enable-yapf-format-on-save t
-             python-sort-imports-on-save t
-             )
      ;;ipython-notebook
-     (go :variables
-         gofmt-command "goimports"
-         go-use-gometalinter t
-         )
+    
      ;; ----------------------------------------------------------------
      ;; Example of useful layers yoorg2nikolau may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -57,47 +49,27 @@ values."
      emacs-lisp
      git
      markdown
-     youdao
-     (scala :variables scala-auto-start-ensime t
-            scala-indent:use-javadoc-style t)
      syntax-checking
-     ;; org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     org-blog
-     (erc :variables
-          erc-server-list
-          '(("irc.freenode.net"
-             :port "6697"
-`             :ssl t
-             :nick "Vincent Wang"
-             :password "secret")
-            ("irc.myworkirc.net"
-             :port "1234"
-             :nick "some-suit"
-             :password "hunter2")))
+     mine
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      yasnippet-snippets
-                                      youdao-dictionary
-                                      (blog-admin :location (recipe
-                                                             :fetcher github
-                                                             :repo "codefalling/blog-admin"))
-      
+                                      ;; yasnippet-snippets
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    
+                       
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -357,6 +329,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (display-time)
+  (setq-default
+   org-agenda-dir "~/workspace/note/"
+   deft-dir "~/workspace/note/"
+   )
  )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -370,7 +346,7 @@ you should place your code here."
  '(column-number-mode t)
  '(package-selected-packages
    (quote
-    (chinese-word-at-point youdao-dictionary yasnippet-snippets projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy)))
+    (nginx-mode helm-w3m w3m chinese-word-at-point youdao-dictionary yasnippet-snippets projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

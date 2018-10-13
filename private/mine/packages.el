@@ -1,9 +1,8 @@
-;;; packages.el --- youdao layer packages file for Spacemacs.
-u
+;;; packages.el --- mine layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
-;; Author: vincent <vincent@vincent.local>
+;; Author: vincent <vincent@wangwenshengdeMacBook-Pro.local>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -19,22 +18,20 @@ u
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `youdao-packages'. Then, for each package PACKAGE:
+;; added to `mine-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `youdao/init-PACKAGE' to load and initialize the package.
+;;   function `mine/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `youdao/pre-init-PACKAGE' and/or
-;;   `youdao/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `mine/pre-init-PACKAGE' and/or
+;;   `mine/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst youdao-packages
-  '(
-    youdao-dictionary
-    )
-  "The list of Lisp packages required by the youdao layer.
+(defconst mine-packages
+  '()
+  "The list of Lisp packages required by the mine layer.
 
 Each entry is either:
 
@@ -60,23 +57,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+
 ;;; packages.el ends here
-
-(defun youdao/init-youdao-dictionary ()
-  "Initialize youdao-dictionary
-https://github.com/xuchunyang/youdao-dictionary.el
-  "
-  (use-package youdao-dictionary
-    :defer t
-    ;; :commands youdao-dictionary-search
-    :init
-    ;; (require youdao-dictionary)
-    ;; Keybinding
-    (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point)
-    :config
-    (progn
-      ;; your config
-      (setq url-automatic-caching t)
-      )
-    ))
-
