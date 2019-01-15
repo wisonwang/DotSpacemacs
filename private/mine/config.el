@@ -7,7 +7,6 @@
 (defvar blog-admin-dir ""
   "blog-admin files location")
 
-
 ;;load sensitive data
 ;; or (like spacemacs init.el)put the above variable into it ,then the own value separated from public config
 ;; .emacs.secrets.el for example:

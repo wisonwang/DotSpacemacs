@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst mine-packages
-  '()
+  '(
+    ;;ipython-notebook
+    )
   "The list of Lisp packages required by the mine layer.
 
 Each entry is either:

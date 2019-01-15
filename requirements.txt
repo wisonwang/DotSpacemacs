@@ -1,0 +1,12 @@
+jupiter
+ipython=6.4.0
+flake8
+autopep8
+jedi>=0.9.0
+json-rpc>=1.8.1
+service_factory>=0.1.5
+autoflake
+hy
+yapf
+futures
+#ptpython

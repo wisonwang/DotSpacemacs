@@ -16,11 +16,13 @@
                                                :variables chinese-enable-fcitx nil
                                                chinese-enable-youdao-dict t)
                                       w3m
+                                      
                                       (python :variables python-test-runner '(pytest nose)
                                               python-fill-column 99
                                               python-enable-yapf-format-on-save t
                                               python-sort-imports-on-save t
                                               )
+                                      ipython-notebook
                                       ;; golang
                                       (go :variables
                                           gofmt-command "goimports"
