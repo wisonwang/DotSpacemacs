@@ -56,7 +56,7 @@
       (setq blog-admin-backend-type 'nikola)
       (setq blog-admin-backend-path "~/myblog")
       (setq blog-admin-backend-new-post-in-drafts t)
-      (setq blog-admin-backend-nikola-executable "~/.virtualenvs/python3/bin/nikola") ;; path to nikola executable
+      (setq blog-admin-backend-nikola-executable "/Users/vincent/.pyenv/versions/py36spark21/bin/nikola") ;; path to nikola executable
       (setq bloorg-nikolag-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
 
       (add-hook 'blog-admin-backend-after-new-post-hook 'find-file)

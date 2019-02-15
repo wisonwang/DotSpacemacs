@@ -33,4 +33,6 @@
                                       (scala :variables scala-auto-start-ensime t
                                              scala-indent:use-javadoc-style t)
                                       )
+
+                                      ;; dash
                                     )

@@ -10,3 +10,5 @@ pip install -r requirements.txt
 # pip install futures
 # pip install ptpython
 
+npm install -g vmd
+
