@@ -32,7 +32,15 @@
                                       ;; scala
                                       (scala :variables scala-auto-start-ensime t
                                              scala-indent:use-javadoc-style t)
-                                      )
 
                                       ;; dash
+                                      ;; (mu4e :variables
+                                      ;;       mu4e-installation-path "/usr/local/Cellar/mu/1.0_1/share/emacs/site-lisp"
+                                      ;;       mu4e-mu-binary "/usr/local/Cellar/mu/1.0_1/bin/mu"
+                                      ;;       mu4e-account-alist t
+                                      ;;       mu4e-enable-notifications t
+                                      ;;       mu4e-enable-mode-line t
+                                      ;;       )
+                                      
+                                      )
                                     )

@@ -32,12 +32,14 @@
 (defconst mine-packages
   '(
     ;;ipython-notebook
+    
     )
   "The list of Lisp packages required by the mine layer.
 
 Each entry is either:
 
-1. A symbol, which is interpreted as a package to be installed, or
+1. A symbol, which is interprete
+d as a package to be installed, or
 
 2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
     name of the package to be installed or loaded, and KEYS are
