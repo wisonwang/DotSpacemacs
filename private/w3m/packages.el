@@ -91,20 +91,22 @@
 
     (setq w3m-search-default-engine "gc")
     (setq w3m-search-engine-alist
-          '(("gg" "http://www.google.com.au/search?q=%s" utf-8)
-            ("gc" "http://www.google.com.au/search?hl=ch-zh&q=%s" utf-8)
+          '(("gg" "http://www.google.com/search?q=%s" utf-8)
+            ("gc" "http://www.google.com/search?hl=ch-zh&q=%s" utf-8)
             ;; stackoverflow search
-            ("sf" "http://www.google.com.au/search?q=%s+site:stackoverflow.com" utf-8)
+            ("sf" "http://www.google.com/search?q=%s+site:stackoverflow.com" utf-8)
             ;; elisp code search
-            ("cs" "http://www.google.com.au/search?q=%s+filetype:el"  utf-8)
+            ("cs" "http://www.google.com/search?q=%s+filetype:el"  utf-8)
             ;; wikipedia
             ("wp" "http://en.wikipedia.org/wiki/Special:Search?search=%s" utf-8)
             ;; online dictionary
             ("d" "http://dictionary.reference.com/search?q=%s" utf-8)
             ("be" "https://www.baidu.com/s?wd=%s&hl=en" utf-8)
-            ("b" "https://www.baidu.com/s?wd=%s" utf-8)
+            ("b" "https://www.baidu.com/s?wd=%s" utf-8) 
+            ("bi" "https://www.bing.com/search?q=%s&qs=n&form=QBRE" utf-8)
+            ("bic" "https://www.bing.com/search?q=%s&qs=n&form=BESBTB" utf-8)
             ;; javascript search on mozilla.org
-            ("j" "http://www.google.com.au/search?q=%s+site:developer.mozilla.org" utf-8)))
+            ("j" "http://www.google.com/search?q=%s+site:developer.mozilla.org" utf-8)))
 
     (setq w3m-uri-replace-alist
           `(("\\`gg:" w3m-search-uri-replace "gg")
@@ -115,6 +117,8 @@
             ("\\`wp:" w3m-search-uri-replace "wp")
             ("\\`b:" w3m-search-uri-replace "b")
             ("\\`be:" w3m-search-uri-replace "be")
+            ("\\`bi:" w3m-search-uri-replace "bi")
+            ("\\`bic:" w3m-search-uri-replace "bic")
             ("\\`urn:ietf:rfc:\\([0-9]+\\)" w3m-pattern-uri-replace "http://www.ietf.org/rfc/rfc\\1.txt"))
           )
     (progn
