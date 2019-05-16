@@ -26,7 +26,7 @@
                                       ;; golang
                                       (go :variables
                                           gofmt-command "goimports"
-                                          go-use-gometalinter t
+                                          go-use-golangci-lint t
                                           )
 
                                       ;; scala

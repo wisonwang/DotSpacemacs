@@ -32,7 +32,9 @@
 (defconst mine-packages
   '(
     ;;ipython-notebook
-    
+    (flycheck :location (recipe
+                           :fetcher github
+                           :repo "flycheck/flycheck"))
     )
   "The list of Lisp packages required by the mine layer.
 
@@ -62,5 +64,8 @@ d as a package to be installed, or
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
+(defun mine/pre-init-flycheck ()
+                    (use-package flycheck
+                      :ensure t
+                      :init (global-flycheck-mode)))
 ;;; packages.el ends here
