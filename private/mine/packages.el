@@ -32,9 +32,17 @@
 (defconst mine-packages
   '(
     ;;ipython-notebook
-    (flycheck :location (recipe
-                           :fetcher github
-                           :repo "flycheck/flycheck"))
+    ;; (flycheck :location (recipe
+    ;;                        :fetcher github
+    ;;                        :repo "flycheck/flycheck"))
+
+    (rtags :location (recipe
+                      :fetcher github
+                      :repo "Andersbakken/rtags"
+                      :version-regexp "v2.32"))
+
+    cmake-ide
+    flycheck-clang-tidy
     )
   "The list of Lisp packages required by the mine layer.
 
@@ -64,8 +72,33 @@ d as a package to be installed, or
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun mine/pre-init-flycheck ()
-                    (use-package flycheck
-                      :ensure t
-                      :init (global-flycheck-mode)))
+;; (defun mine/pre-init-flycheck ()
+;;                     (use-package flycheck
+;;                       :ensure t
+;;                       :init (global-flycheck-mode)))
+
+(defun mine/init-cmake-ide () 
+  (use-package cmake-ide
+    :ensure t
+    :init 
+    (cmake-ide-setup)
+    )
+ )
+
+(defun mine/init-rtags ()
+  (use-package rtags
+    :ensure t
+    :config
+    (setq rtags-verify-protocol-version nil)
+    )
+  )
+
+(defun mine/init-flycheck-clang-tidy ()
+  (use-package flycheck-clang-tidy
+    :ensure t
+    :config
+    )
+  )
+
+
 ;;; packages.el ends here

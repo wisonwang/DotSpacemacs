@@ -33,16 +33,9 @@ values."
      nginx
      csv
      php
-     html
      yaml
+     html
      javascript
-     ;;ipython-notebook
-    
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers yoorg2nikolau may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      helm
      
      (auto-completion :variables
@@ -53,7 +46,6 @@ values."
      emacs-lisp
      git
      markdown
-     syntax-checking
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -330,13 +322,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (display-time)
-  (setq-default
-   org-agenda-dir "~/workspace/note/"
-   deft-dir "~/workspace/note/"
-   )
+  (setq secret-file (expand-file-name ".secret.el" dotspacemacs-directory))
+  (load secret-file)
  )
 
+;; if custom-file variable is enabled, custom-set-variables will be written to custom-file automatically
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
