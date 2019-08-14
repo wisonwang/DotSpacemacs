@@ -44,40 +44,14 @@
     cmake-ide
     flycheck-clang-tidy
     )
-  "The list of Lisp packages required by the mine layer.
+  )
 
-Each entry is either:
+(defun mine/pre-init-flycheck ()
+                    (use-package flycheck
+                      :ensure t
+                      :init (global-flycheck-mode)))
 
-1. A symbol, which is interprete
-d as a package to be installed, or
-
-2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
-    name of the package to be installed or loaded, and KEYS are
-    any number of keyword-value-pairs.
-
-    The following keys are accepted:
-
-    - :excluded (t or nil): Prevent the package from being loaded
-      if value is non-nil
-
-    - :location: Specify a custom installation location.
-      The following values are legal:
-
-      - The symbol `elpa' (default) means PACKAGE will be
-        installed using the Emacs package manager.
-
-      - The symbol `local' directs Spacemacs to load the file at
-        `./local/PACKAGE/PACKAGE.el'
-
-      - A list beginning with the symbol `recipe' is a melpa
-        recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-;; (defun mine/pre-init-flycheck ()
-;;                     (use-package flycheck
-;;                       :ensure t
-;;                       :init (global-flycheck-mode)))
-
-(defun mine/init-cmake-ide () 
+(defun mine/pre-init-cmake-ide () 
   (use-package cmake-ide
     :ensure t
     :init 
@@ -85,7 +59,7 @@ d as a package to be installed, or
     )
  )
 
-(defun mine/init-rtags ()
+(defun mine/pre-init-rtags ()
   (use-package rtags
     :ensure t
     :config

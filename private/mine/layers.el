@@ -10,7 +10,7 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
-                                                                            org-blog
+                                      org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
                                                :variables chinese-enable-fcitx nil
