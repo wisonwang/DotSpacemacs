@@ -37,7 +37,6 @@ values."
      html
      javascript
      helm
-     
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
@@ -45,7 +44,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -62,6 +61,7 @@ values."
    dotspacemacs-additional-packages '(
                                       yasnippet-snippets
                                       dash
+                                      
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()

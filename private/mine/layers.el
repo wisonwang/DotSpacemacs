@@ -10,16 +10,20 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
-                                      org-blog
+                                                                            org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
                                                :variables chinese-enable-fcitx nil
                                                chinese-enable-youdao-dict t)
                                       w3m
 
+                                      pandoc
+
                                       (syntax-checking :variables
+                                                       syntax-checking-enable-by-default t
                                                        syntax-checking-enable-tooltips nil
                                                        syntax-checking-use-original-bitmaps t)
+
                                       (python :variables python-test-runner '(pytest nose)
                                               python-fill-column 99
                                               python-enable-yapf-format-on-save t
@@ -49,12 +53,17 @@
 
                                       ;; mychat
 
+                                      (cmake :variables cmake-enable-cmake-ide-support t)
                                       (c-c++ :variables
                                                c-c++-enable-clang-support t
                                                c-c++-default-mode-for-headers 'c++-mode
                                                c-c++-enable-google-style t
                                                c-c++-enable-google-newline t)
-                                      (cmake :variables cmake-enable-cmake-ide-support t)
+
+                            
 
                                       )
                                     )
+
+
+

@@ -64,7 +64,18 @@
   "Open url according to w3m url open function 'fn', and auto handle url prefix"
   (cond ((string-prefix-p "http://" url) (funcall fn url))
         ((string-prefix-p "https://" url) (funcall fn url))
+        ((string-prefix-p "file://" url) (funcall fn url))
         (t (funcall fn (concat "http://" url)))))
+
+(defun v/w3m-open-local-file (file)
+  "Render FILE using w3m."
+  (interactive "fFile: ")
+  (v/w3m-open-url-with 'w3m-goto-url (concat "file://"
+	             (and (memq system-type '(windows-nt ms-dos))
+		                "/")
+	             (expand-file-name file))))
+
+
 
 (defun v/w3m-open-url (url)
   "Opens url in new w3m session with 'http://' appended"
