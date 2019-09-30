@@ -32,13 +32,18 @@
 (defconst org-blog-packages
   '(
     ;; org
-    (org :location built-in)
+    (org :location built-in
+         :variables
+         org-enable-github-support t
+         org-enable-reveal-js-support t)
     org-pomodoro
     deft
     (blog-admin :location (recipe
                            :fetcher github
                            :repo "codefalling/blog-admin"))
-    ))
+    (org-brain)
+    )
+  )
  
 (defun org-blog/init-blog-admin ()
   "Initialize blog-admin https://github.com/CodeFalling/blog-admin
@@ -71,6 +76,23 @@
     (setq deft-recursive t)
     (setq deft-extension "org")
     (setq deft-directory deft-dir)))
+
+
+(defun org-blog/init-org-brain ()
+  (use-package org-brain :ensure t
+    :init
+    (setq org-brain-path "~/workspace/note/mybrain")
+    ;; For Evil users
+    (with-eval-after-load 'evil
+      (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
+    :config
+    (setq org-id-track-globally t)
+    (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+    (push '("b" "Brain" plain (function org-brain-goto-end)
+            "* %i%?" :empty-lines 1)
+          org-capture-templates)
+    (setq org-brain-visualize-default-choices 'all)
+    (setq org-brain-title-max-length 12)))
 
 
 ;;In order to export pdf to support Chinese, I should install Latex at here: https://www.tug.org/mactex/

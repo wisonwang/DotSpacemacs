@@ -26,7 +26,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layhadoopers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   ;; dotspacemacs-configuration-layer-path (list "~/workspace/DotSpacemacs/private/")
+   dotspacemacs-configuration-layer-path (list "~/workspace/DotSpacemacs/private/")
    ;; (list (expand-file-name "./private/" (file-name-directory load-file-name)))
    ;; List of projectileconfiguration layers to load.
    dotspacemacs-configuration-layers

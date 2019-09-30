@@ -10,7 +10,7 @@
 
 2. 下载本项目，执行
 
-```
+```bash
 ln -s /project/path/.spacemacs /user/home/path/.spacemacs
 ln -s /project/path/private /user/home/path/.emacs.d/private
 

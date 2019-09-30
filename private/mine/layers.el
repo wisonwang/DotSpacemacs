@@ -16,7 +16,7 @@
                                                :variables chinese-enable-fcitx nil
                                                chinese-enable-youdao-dict t)
                                       w3m
-
+									  ;; pdf
                                       pandoc
 
                                       (syntax-checking :variables
