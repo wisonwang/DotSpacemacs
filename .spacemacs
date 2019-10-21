@@ -26,18 +26,20 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layhadoopers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path (list "~/workspace/DotSpacemacs/private/")
-   ;; (list (expand-file-name "./private/" (file-name-directory load-file-name)))
+   ;; dotspacemacs-configuration-layer-path (list (expand-file-name "./private/" (file-name-directory load-file-name)))
+   dotspacemacs-configuration-layer-path (list "~/DotSpacemacs-master/private/")
+
    ;; List of projectileconfiguration layers to load.
    dotspacemacs-configuration-layers
    '(
      nginx
      csv
-     php
+     ;;php
      yaml
      html
      javascript
      helm
+     
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
@@ -45,7 +47,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     (markdown :variables markdown-live-preview-engine 'vmd)
+     markdown
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)

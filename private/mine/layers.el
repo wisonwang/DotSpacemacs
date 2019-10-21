@@ -17,7 +17,7 @@
                                                chinese-enable-youdao-dict t)
                                       w3m
 									  ;; pdf
-                                      pandoc
+                                      ;; pandoc
 
                                       (syntax-checking :variables
                                                        syntax-checking-enable-by-default t

@@ -31,6 +31,8 @@
 
 (defconst org-blog-packages
   '(
+    ob-ipython
+    htmlize
     ;; org
     (org :location built-in
          :variables
@@ -40,8 +42,9 @@
     deft
     (blog-admin :location (recipe
                            :fetcher github
-                           :repo "codefalling/blog-admin"))
-    (org-brain)
+                           :repo "wisonwang/blog-admin"))
+
+    org-brain
     )
   )
  
@@ -77,6 +80,11 @@
     (setq deft-extension "org")
     (setq deft-directory deft-dir)))
 
+(defun org-blog/init-htmlize ()
+  (use-package htmlize :ensure t))
+
+(defun org-blog/init-ob-ipython ()
+  (use-package ob-ipython :ensure t) )
 
 (defun org-blog/init-org-brain ()
   (use-package org-brain :ensure t
@@ -169,7 +177,13 @@
          (emacs-lisp . t)
          (plantuml . t)
          (C . t)
+         (ipython .t)
          (ditaa . t)))
+
+      (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
+
+;;; display/update images in the buffer after I evaluate
+      (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
 
       ;; copy from chinese layer
       (defadvice org-html-paragraph (before org-html-paragraph-advice
