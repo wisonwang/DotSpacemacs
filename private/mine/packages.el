@@ -46,6 +46,7 @@
     )
   )
 
+
 (defun mine/pre-init-flycheck ()
                     (use-package flycheck
                       :ensure t

@@ -32,6 +32,9 @@
 (defconst org-blog-packages
   '(
     ob-ipython
+    (ob-go :location (recipe :fetcher github
+                             :repo "pope/ob-go"
+                             ))
     htmlize
     ;; org
     (org :location built-in
@@ -85,6 +88,10 @@
 
 (defun org-blog/init-ob-ipython ()
   (use-package ob-ipython :ensure t) )
+
+(defun org-blog/init-ob-go ()
+  (use-package ob-go :ensure t))
+
 
 (defun org-blog/init-org-brain ()
   (use-package org-brain :ensure t
@@ -178,6 +185,8 @@
          (plantuml . t)
          (C . t)
          (ipython .t)
+         (plantuml . t)
+         (go . t)
          (ditaa . t)))
 
       (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block

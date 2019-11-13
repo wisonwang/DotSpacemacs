@@ -49,7 +49,9 @@
                                       ;;       mu4e-enable-mode-line t
                                       ;;       )
 
-                                      ;; erc
+                                      (java :variables java-backend 'meghanada)
+                                      (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
+                                                org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
 
                                       ;; mychat
 
