@@ -10,6 +10,12 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
+									  (org :variables
+										   org-enable-github-support t
+										   org-enable-sticky-header t
+										   org-enable-reveal-js-support t
+										   org-enable-org-journal-support t)
+
                                       org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
@@ -28,6 +34,7 @@
                                               python-fill-column 99
                                               python-enable-yapf-format-on-save t
                                               python-sort-imports-on-save t
+											  ;; python-formatter 'yapf
                                               )
                                       ipython-notebook
                                       ;; golang
@@ -36,9 +43,13 @@
                                           go-use-golangci-lint t
                                           )
 
+									  sphinx
+									  restructuredtext
                                       ;; scala
                                       (scala :variables scala-auto-start-ensime t
                                              scala-indent:use-javadoc-style t)
+
+									  (java :variables java-backend 'meghanada)
 
                                       ;; dash
                                       ;; (mu4e :variables
@@ -61,9 +72,11 @@
                                                c-c++-enable-google-newline t)
 
                             
+									  
+                                      (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
+												org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
 
-                                      )
-                                    )
+                                      ))
 
 
 

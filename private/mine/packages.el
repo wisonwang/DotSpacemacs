@@ -43,7 +43,7 @@
 
     cmake-ide
     flycheck-clang-tidy
-    )
+	)
   )
 
 (defun mine/pre-init-flycheck ()
@@ -73,5 +73,7 @@
     :config
     )
   )
+
+
 
 ;;; packages.el ends here

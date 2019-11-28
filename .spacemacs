@@ -30,7 +30,9 @@ values."
    ;; (list (expand-file-name "./private/" (file-name-directory load-file-name)))
    ;; List of projectileconfiguration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(mine
+	 sql
+	 rust
      nginx
      csv
      php
@@ -48,11 +50,11 @@ values."
      (markdown :variables markdown-live-preview-engine 'vmd)
      (shell :variables
             shell-default-height 30
+			shell-default-term-shell "/bin/zsh"
             shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     mine
      dash
      )
    ;; List of additional packages that will be installed without being
@@ -62,6 +64,9 @@ values."
    dotspacemacs-additional-packages '(
                                       yasnippet-snippets
                                       dash
+									  (ox-pandoc :location
+												 (recipe :fetcher github
+														 :repo kawabata/ox-pandoc))
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()

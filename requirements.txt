@@ -7,6 +7,7 @@ json-rpc>=1.8.1
 service_factory>=0.1.5
 autoflake
 hy
+python-language-server
 yapf
 futures
 #ptpython

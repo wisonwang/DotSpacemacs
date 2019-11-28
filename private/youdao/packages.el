@@ -32,7 +32,8 @@ u
 
 (defconst youdao-packages
   '(
-    youdao-dictionary
+    (youdao-dictionary :location (recipe :fetcher github
+										 :repo "https://github.com/xuchunyang/youdao-dictionary.el"))
     )
   "The list of Lisp packages required by the youdao layer.
 
