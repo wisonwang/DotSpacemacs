@@ -10,6 +10,13 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
+
+                                      (org :variables
+                                           org-enable-github-support t
+                                           org-enable-sticky-header t
+                                           org-enable-reveal-js-support t
+                                           org-enable-org-journal-support t)
+
                                       org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
