@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ipython-head
+# key: ipyh
+# --
+#+BEGIN_SRC ipython :session $1 :results raw drawer output
+%matplotlib inline
+#+END_SRC
