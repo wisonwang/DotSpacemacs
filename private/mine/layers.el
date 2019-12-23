@@ -41,6 +41,9 @@
                                       (go :variables
                                           gofmt-command "goimports"
                                           go-use-golangci-lint t
+										  go-format-before-save t
+										  go-backend 'go-mode
+										  ;; godoc-at-point-function 'godoc-gogetdoc
                                           )
 
 									  sphinx
@@ -66,10 +69,13 @@
 
                                       (cmake :variables cmake-enable-cmake-ide-support t)
                                       (c-c++ :variables
-                                               c-c++-enable-clang-support t
-                                               c-c++-default-mode-for-headers 'c++-mode
-                                               c-c++-enable-google-style t
-                                               c-c++-enable-google-newline t)
+											 c-c++-backend 'lsp-clangd
+											 c++-enable-organize-includes-on-save t
+                                             c-c++-enable-clang-support t
+											 c-c++-adopt-subprojects t
+											 c-c++-default-mode-for-headers 'c++-mode
+											 c-c++-enable-google-style t
+											 c-c++-enable-google-newline t)
 
                             
 									  
