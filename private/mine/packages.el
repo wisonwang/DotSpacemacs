@@ -51,6 +51,7 @@
                       :ensure t
                       :init (global-flycheck-mode)))
 
+
 (defun mine/pre-init-cmake-ide () 
   (use-package cmake-ide
     :ensure t

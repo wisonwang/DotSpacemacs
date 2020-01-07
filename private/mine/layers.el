@@ -14,6 +14,7 @@
 										   org-enable-github-support t
 										   org-enable-sticky-header t
 										   org-enable-reveal-js-support t
+										   ;; org-projectile-file "TODOs.org"
 										   org-enable-org-journal-support t)
 
                                       org-blog
@@ -21,7 +22,7 @@
                                       (chinese :packages youdao-dictionary fcitx
                                                :variables chinese-enable-fcitx nil
                                                chinese-enable-youdao-dict t)
-                                      w3m
+                                      ;; w3m
 									  ;; pdf
                                       pandoc
 
@@ -70,7 +71,7 @@
                                       (cmake :variables cmake-enable-cmake-ide-support t)
                                       (c-c++ :variables
 											 c-c++-backend 'lsp-clangd
-											 c++-enable-organize-includes-on-save t
+											 ;; c++-enable-organize-includes-on-save t
                                              c-c++-enable-clang-support t
 											 c-c++-adopt-subprojects t
 											 c-c++-default-mode-for-headers 'c++-mode
