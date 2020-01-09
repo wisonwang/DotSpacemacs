@@ -24,7 +24,7 @@
 ;; golang
 
 (setenv "GO111MODULE" "off")
-
+(xterm-mouse-mode -1)
 ;; erc
 (setq-default dotspacemacs-configuration-layers
               '((erc :variables
