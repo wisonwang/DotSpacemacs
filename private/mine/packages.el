@@ -43,6 +43,7 @@
 
     cmake-ide
     flycheck-clang-tidy
+	cal-china-x
 	)
   )
 
@@ -50,6 +51,23 @@
                     (use-package flycheck
                       :ensure t
                       :init (global-flycheck-mode)))
+
+
+(defun mine/init-cal-china-x ()
+  (use-package cal-china-x
+	:ensure t
+	:init
+	(eval-after-load `cal-china-x
+	  `(progn
+		 (setq mark-holidays-in-calendar t)
+		 (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+		 (setq cal-china-x-general-holidays '((holiday-lunar 1 15 "元宵节")))
+		 (setq calendar-holidays
+			   (append cal-china-x-important-holidays
+					   cal-china-x-general-holidays
+					   ))
+		 ))
+	))
 
 
 (defun mine/pre-init-cmake-ide () 
