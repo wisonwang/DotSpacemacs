@@ -1,4 +1,4 @@
-(defvar org-agenda-dir ""
+(defvar org-agenda-dir "~/workspace/note"
   "gtd org files location")
 
 (defvar deft-dir ""
