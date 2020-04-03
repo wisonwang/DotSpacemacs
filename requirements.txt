@@ -13,3 +13,5 @@ pyls-isort
 yapf
 futures
 #ptpython
+importmagic
+epc

@@ -67,7 +67,8 @@ values."
 									  (ox-pandoc :location
 												 (recipe :fetcher github
 														 :repo kawabata/ox-pandoc))
-                                      )
+									  
+									  )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.

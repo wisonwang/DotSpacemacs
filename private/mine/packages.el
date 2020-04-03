@@ -44,8 +44,17 @@
     cmake-ide
     flycheck-clang-tidy
 	cal-china-x
+	org-alert
 	)
   )
+
+(defun mine/init-org-alert ()
+  (use-package org-alert
+	:ensure t
+	:init (progn 
+			(setq alert-default-style 'osx-notifier)
+			(setq org-alert-interval 600)
+   )))
 
 (defun mine/pre-init-flycheck ()
                     (use-package flycheck
