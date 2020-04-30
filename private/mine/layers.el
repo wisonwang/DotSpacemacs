@@ -50,8 +50,8 @@
 									  sphinx
 									  restructuredtext
                                       ;; scala
-                                      (scala :variables scala-auto-start-ensime t
-                                             scala-indent:use-javadoc-style t)
+                                      ;; (scala :variables
+                                      ;;       scala-indent:use-javadoc-style t)
 
 									  (java :variables java-backend 'meghanada)
 

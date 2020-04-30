@@ -36,6 +36,7 @@
     ;;                        :fetcher github
     ;;                        :repo "flycheck/flycheck"))
 
+	ob-ipython
     (rtags :location (recipe
                       :fetcher github
                       :repo "Andersbakken/rtags"
@@ -44,17 +45,33 @@
     cmake-ide
     flycheck-clang-tidy
 	cal-china-x
-	org-alert
+	;; org-alert
 	)
   )
 
-(defun mine/init-org-alert ()
-  (use-package org-alert
-	:ensure t
-	:init (progn 
-			(setq alert-default-style 'osx-notifier)
-			(setq org-alert-interval 600)
-   )))
+
+;; (defun mine/init-org-alert ()
+;;   (use-package org-alert
+;; 	:ensure t
+;; 	:init (eval-after-load `org-alert
+;; 			`(progn
+;; 			(defun my-alert-osx-notifier-notify (info)
+;; 			  (apply #'call-process "osascript" nil nil nil "-e"
+;; 					 (list (format "display notification %S with title %S sound name \"Submarine\""
+;; 								   (alert-encode-string (plist-get info :message))
+;; 								   (alert-encode-string (plist-get info :title)))))
+;; 			  (alert-message-notify info))
+
+;; 			(alert-define-style 'my-osx-notifier :title "my Notify using native OSX notification" :notifier #'my-alert-osx-notifier-notify)
+;; 			(setq org-alert-interval 600)
+;; 			(setq alert-default-style 'my-osx-notifier)
+;;    ))))
+
+
+(defun mine/init-ob-ipython ()(use-package ob-ipython
+								:ensure t
+								:init
+								))
 
 (defun mine/pre-init-flycheck ()
                     (use-package flycheck
