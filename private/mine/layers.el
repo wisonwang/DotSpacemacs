@@ -10,6 +10,7 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
+									  lsp
 									  (org :variables
 										   org-enable-github-support t
 										   org-enable-sticky-header t
@@ -17,7 +18,7 @@
 										   ;; org-projectile-file "TODOs.org"
 										   org-enable-org-journal-support t)
 
-                                      org-blog
+									  org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
                                                :variables chinese-enable-fcitx nil
@@ -35,6 +36,8 @@
                                               python-fill-column 99
                                               python-enable-yapf-format-on-save t
                                               python-sort-imports-on-save t
+											  python-backend 'lsp
+											  python-lsp-server 'pyls
 											  ;; python-formatter 'yapf
                                               )
                                       ipython-notebook
@@ -82,7 +85,7 @@
 									  
                                       (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
 												org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
-
+							
                                       ))
 
 
