@@ -18,6 +18,7 @@
 										   ;; org-projectile-file "TODOs.org"
 										   org-enable-org-journal-support t)
 
+
 									  org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
@@ -49,7 +50,7 @@
 										  go-backend 'go-mode
 										  ;; godoc-at-point-function 'godoc-gogetdoc
                                           )
-
+ 
 									  sphinx
 									  restructuredtext
                                       ;; scala
@@ -85,7 +86,12 @@
 									  
                                       (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
 												org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
-							
+
+									  (elfeed :variables
+											  elfeed-enable-web-interface t
+											  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
+
+						   
                                       ))
 
 
