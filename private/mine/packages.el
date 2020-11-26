@@ -36,7 +36,7 @@
     ;;                        :fetcher github
     ;;                        :repo "flycheck/flycheck"))
 
-	ob-ipython
+	(ob-ipython :location local)
     (rtags :location (recipe
                       :fetcher github
                       :repo "Andersbakken/rtags"

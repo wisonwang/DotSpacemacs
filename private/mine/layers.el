@@ -36,8 +36,8 @@
                                               python-fill-column 99
                                               python-enable-yapf-format-on-save t
                                               python-sort-imports-on-save t
-											  python-backend 'lsp
-											  python-lsp-server 'pyls
+											  python-backend 'anaconda
+											  ;; python-lsp-server 'pyls
 											  ;; python-formatter 'yapf
                                               )
                                       ipython-notebook
