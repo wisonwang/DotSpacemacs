@@ -15,7 +15,7 @@
 										   org-enable-github-support t
 										   org-enable-sticky-header t
 										   org-enable-reveal-js-support t
-										   ;; org-projectile-file "TODOs.org"
+										   org-projectile-file "TODOs.org"
 										   org-enable-org-journal-support t)
 
 
@@ -24,7 +24,6 @@
                                       (chinese :packages youdao-dictionary fcitx
                                                :variables chinese-enable-fcitx nil
                                                chinese-enable-youdao-dict t)
-                                      ;; w3m
 									  ;; pdf
                                       pandoc
 
@@ -89,9 +88,8 @@
 
 									  (elfeed :variables
 											  elfeed-enable-web-interface t
-											  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
+ 											  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
 
-						   
                                       ))
 
 
