@@ -11,6 +11,7 @@
 
 (configuration-layer/declare-layers '(
 									  lsp
+									  tabnine
 									  (org :variables
 										   org-enable-github-support t
 										   org-enable-sticky-header t
@@ -18,7 +19,7 @@
 										   org-projectile-file "TODOs.org"
 										   org-enable-org-journal-support t)
 
-
+ 
 									  org-blog
                                       ;; youdao
                                       (chinese :packages youdao-dictionary fcitx
@@ -38,18 +39,18 @@
                                               python-sort-imports-on-save t
 											  python-backend 'anaconda
 											  ;; python-lsp-server 'pyls
-											  ;; python-formatter 'yapf
+											  python-formatter 'yapf
                                               )
-                                      ipython-notebook
+                                      
+									  (ipython-notebook :variables ein-backend 'jupyter)
                                       ;; golang
                                       (go :variables
                                           gofmt-command "goimports"
                                           go-use-golangci-lint t
 										  go-format-before-save t
 										  go-backend 'go-mode
-										  ;; godoc-at-point-function 'godoc-gogetdoc
+										  godoc-at-point-function 'godoc-gogetdoc
                                           )
- 
 									  sphinx
 									  restructuredtext
                                       ;; scala
@@ -70,7 +71,8 @@
                                       ;; erc
 
                                       ;; mychat
-
+									  search-engine
+									  
                                       (cmake :variables cmake-enable-cmake-ide-support t)
                                       (c-c++ :variables
 											 c-c++-backend 'lsp-clangd
@@ -86,9 +88,9 @@
                                       (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
 												org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
 
-									  (elfeed :variables
-											  elfeed-enable-web-interface t
- 											  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
+									  ;; (elfeed :variables
+									  ;; 		  elfeed-enable-web-interface t
+ 									  ;; 		  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
 
                                       ))
 

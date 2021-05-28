@@ -31,7 +31,7 @@
 ;; python 编码设置
 (setenv "PYTHONIOENCODING" "utf-8")
 ;; golang
-(setenv "GO111MODULE" "off")
+(setenv "GO111MODULE" "auto")
 (setenv "GOROOT" "/usr/local/go")
 (setq global-visual-line-mode t)
 
@@ -147,59 +147,62 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(company-show-numbers (quote (quote t)))
  '(current-language-environment "UTF-8")
  '(exec-path
    (quote
-    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/opt/sbt@1/bin" "/usr/local/opt/qt/bin" "/usr/local/opt/bison/bin" "/usr/local/bin" "/usr/local/go/bin" "/usr/local/MacGPG2/bin" "/Library/TeX/texbin" "/Users/vincent/go/bin" "/usr/local/Cellar/go/1.10.1/libexec/bin" "/Users/vincent/Qt/5.9.1/clang_64/bin" "/Users/vincent/.pyenv/shims")))
+	("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/opt/sbt@1/bin" "/usr/local/opt/qt/bin" "/usr/local/opt/bison/bin" "/usr/local/bin" "/usr/local/go/bin" "/usr/local/MacGPG2/bin" "/Library/TeX/texbin" "/Users/vincent/go/bin" "/usr/local/Cellar/go/1.10.1/libexec/bin" "/Users/vincent/Qt/5.9.1/clang_64/bin" "/Users/vincent/.pyenv/shims")))
  '(flycheck-golangci-lint-disable-linters (quote ("unused")))
+ '(godoc-reuse-buffer t)
  '(lsp-clients-clangd-executable "/usr/local/opt/llvm/bin/clangd")
  '(org-confirm-babel-evaluate nil)
  '(org-export-use-babel t)
  '(package-selected-packages
    (quote
-    (wgrep smex ivy-xref ivy-hydra systemd elfeed-web elfeed-org elfeed-goodies ace-jump-mode elfeed youdao-dictionary chinese-word-at-point yasnippet-snippets toml-mode sql-indent racer plantuml-mode pandoc-mode lv ox-reveal ox-pandoc ox-gfm org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download nginx-mode dash-docs gnuplot flycheck-rust flycheck-clang-tidy transient polymode anaphora disaster dash-at-point company-quickhelp company-emacs-eclim eclim company-c-headers cmake-mode clang-format cargo rust-mode cal-china-x ob-ipython helm-xref helm-rtags helm-purpose helm-org-rifle helm-org helm-lsp helm-ls-git helm-git-grep helm-dash helm-ctest treemacs-icons-dired ron-mode org-superstar lsp-pyright lsp-origami origami lsp-ivy emr list-utils nameless font-lock+ projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy)))
+	(nameless font-lock+ projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy)))
  '(pyim-dicts
    (quote
-    ((:name "中文词典" :file "/Users/vincent/workspace/DotSpacemacs/pyim-bigdict.pyim.gz"))))
+	((:name "中文词典" :file "/Users/vincent/workspace/DotSpacemacs/pyim-bigdict.pyim.gz"))))
  '(pytest-cmd-flags "-s -x")
  '(safe-local-variable-values
    (quote
-    ((python-sort-imports-on-save)
-     (flycheck-golangci-lint-disable-linters list "unused")
-     (flycheck-golangci-lint-disable-linters . unused)
-     (javascript-backend . tide)
-     (c-default-style . google-c-style)
-     (setq c-basic-offset 4)
-     (helm-ctest-dir . "~/workspace/ads/recommend_index_cpp/app/ad_broker/build/")
-     (cmake-ide-inc-dir . "~/workspace/ads/recommend_index_cpp/app/ad_broker/build")
-     (eval progn
-           (make-local-variable
-            (quote process-environment))
-           (setq process-environment
-                 (copy-sequence process-environment))
-           (setenv "GOPATH"
-                   (format "%s:%s"
-                           (getenv "GOPATH")
-                           (directory-file-name default-directory))))
-     (c-default-style . google)
-     (setenv "CCX" "/usr/local/opt/llvm/bin/clang++")
-     (helm-ctest-dir . "~/workspace/recommend_index_cpp/app/ad_broker/build/")
-     (helm-make-arguments . "-j7")
-     (helm-make-build-dir . "build")
-     (cmake-ide-set-compiler-flags . "-stdlib=libstdc++")
-     (cmake-ide-link . "")
-     (cmake-ide-inc-dir . "~/workspace/recommend_index_cpp/app/ad_broker/build")
-     (org-id-locations-file "~/workspace/note/.org-id-locations")
-     (org-id-track-globally t)
-     (evil-set-initial-state
-      (quote org-brain-visualize-mode)
-      (quote emacs))
-     (org-brain-path "~/workspace/note/mybrain")
-     (javascript-backend . tern)
-     (javascript-backend . lsp)
-     (go-backend . go-mode)
-     (go-backend . lsp))))
- )
+	((python-format-on-save . t)
+	 (python-sort-imports-on-save)
+	 (flycheck-golangci-lint-disable-linters list "unused")
+	 (flycheck-golangci-lint-disable-linters . unused)
+	 (javascript-backend . tide)
+	 (c-default-style . google-c-style)
+	 (setq c-basic-offset 4)
+	 (helm-ctest-dir . "~/workspace/ads/recommend_index_cpp/app/ad_broker/build/")
+	 (cmake-ide-inc-dir . "~/workspace/ads/recommend_index_cpp/app/ad_broker/build")
+	 (eval progn
+		   (make-local-variable
+			(quote process-environment))
+		   (setq process-environment
+				 (copy-sequence process-environment))
+		   (setenv "GOPATH"
+				   (format "%s:%s"
+						   (getenv "GOPATH")
+						   (directory-file-name default-directory))))
+	 (c-default-style . google)
+	 (setenv "CCX" "/usr/local/opt/llvm/bin/clang++")
+	 (helm-ctest-dir . "~/workspace/recommend_index_cpp/app/ad_broker/build/")
+	 (helm-make-arguments . "-j7")
+	 (helm-make-build-dir . "build")
+	 (cmake-ide-set-compiler-flags . "-stdlib=libstdc++")
+	 (cmake-ide-link . "")
+	 (cmake-ide-inc-dir . "~/workspace/recommend_index_cpp/app/ad_broker/build")
+	 (org-id-locations-file "~/workspace/note/.org-id-locations")
+	 (org-id-track-globally t)
+	 (evil-set-initial-state
+	  (quote org-brain-visualize-mode)
+	  (quote emacs))
+	 (org-brain-path "~/workspace/note/mybrain")
+	 (javascript-backend . tern)
+	 (javascript-backend . lsp)
+	 (go-backend . go-mode)
+	 (go-backend . lsp))))
+ '(url-proxy-services nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

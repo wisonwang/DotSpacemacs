@@ -42,6 +42,7 @@ values."
      javascript
      ivy
      (auto-completion :variables
+					  auto-completion-minimum-prefix-length 0
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage nil
                       auto-completion-enable-snippets-in-popup nil)
