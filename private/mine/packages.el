@@ -36,7 +36,8 @@
     ;;                        :fetcher github
     ;;                        :repo "flycheck/flycheck"))
 
-	(ob-ipython :location local)
+    ;; dash-functional
+	  (ob-ipython :location local)
     (rtags :location (recipe
                       :fetcher github
                       :repo "Andersbakken/rtags"
@@ -44,8 +45,8 @@
 
     cmake-ide
     flycheck-clang-tidy
-	cal-china-x
-	;; org-alert
+	  cal-china-x
+	  ;; org-alert
 	)
   )
 
@@ -67,6 +68,12 @@
 ;; 			(setq alert-default-style 'my-osx-notifier)
 ;;    ))))
 
+
+;; (defun mine/init-dash-functional()
+;;   (use-package dash-functional
+;; 		:ensure t
+;; 		:init
+;; 		))
 
 (defun mine/init-ob-ipython ()(use-package ob-ipython
 								:ensure t

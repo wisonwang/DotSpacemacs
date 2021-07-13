@@ -36,7 +36,7 @@
 (require 'ob)
 (require 'ob-python)
 (require 'dash)
-(require 'dash-functional)
+;; (require 'dash-functional)
 (require 's)
 (require 'f)
 (require 'json)
