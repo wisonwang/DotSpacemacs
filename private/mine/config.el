@@ -154,7 +154,7 @@ unwanted space when exporting org-mode to html."
 				("j" "Journal Entry"
 				 entry (file+datetree org-agenda-file-journal)
 				 "* %?"
-				 :empty-lines 1)))
+				 :empty-lines 1))) 
 
 		;;An entry without a cookie is treated just like priority ' B '.
 		;;So when create new task, they are default 重要且紧急
@@ -173,8 +173,8 @@ unwanted space when exporting org-mode to html."
 				("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
 				("b" "Blog" tags-todo "BLOG")
 				("p" . "项目安排")
-				("pw" tags-todo "PROJECT+WORK+CATEGORY=\"cocos2d-x\"")
-				("pl" tags-todo "PROJECT+DREAM+CATEGORY=\"zilongshanren\"")
+				("pw" tags-todo "PROJECT+WORK+CATEGORY=\"fosun-uk\"")
+				("pl" tags-todo "PROJECT+WORK+CATEGORY=\"fosun-tcp\"")
 				("W" "Weekly Review"
 				 ((stuck "") ;; review stuck projects as designated by org-stuck-projects
                   (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
