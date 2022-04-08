@@ -75,6 +75,10 @@
 	 (setq org-journal-dir "~/workspace/journal/")
 	 ))
 
+(eval-after-load `yasnippet
+  `(progn
+     (add-to-list `yas-snippet-dirs "~/workspace/DotSpacemacs/private/snippets")
+     ))
 
 (setq go-test-verbose "-v -x")
 
@@ -189,7 +193,7 @@
      (javascript-backend . lsp)))
  '(sqlfmt-options nil)
  '(yas-snippet-dirs
-   '("~/workspace/DotSpacemacs/private/snippets/" "/Users/vincent/.emacs.d/private/snippets/" "/Users/vincent/.emacs.d/layers/+completion/auto-completion/local/snippets" yasnippet-snippets-dir)))
+   '("/Users/vincent/workspace/DotSpacemacs/private/snippets/" "/Users/vincent/.emacs.d/private/snippets/" "/Users/vincent/.emacs.d/layers/+completion/auto-completion/local/snippets" yasnippet-snippets-dir)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
