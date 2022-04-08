@@ -52,6 +52,11 @@
                                           go-backend 'lsp
 										                      ;; godoc-at-point-function 'godoc-gogetdoc
                                           )
+                                     
+                                      (sql :variables
+                                           sql-backend 'lsp
+                                           sql-lsp-sqls-workspace-config-path 'workspace)
+
 									                    sphinx
 									                    restructuredtext
                                       ;; scala
@@ -84,8 +89,6 @@
 											                       c-c++-enable-google-style t
 											                       c-c++-enable-google-newline t)
 
-                                      
-									                    
                                       (plantuml :variables plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar"
 												                        org-plantuml-jar-path "~/workspace/plantuml-1.2019.11/target/plantuml-1.2019.12-SNAPSHOT.jar")
 

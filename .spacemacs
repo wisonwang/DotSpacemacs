@@ -32,7 +32,6 @@ values."
    dotspacemacs-configuration-layers
    '(systemd
 	 mine
-	 sql
 	 rust
      nginx
      csv
@@ -42,8 +41,10 @@ values."
      javascript
      ivy
      (auto-completion :variables
-					  auto-completion-minimum-prefix-length 0
+					            auto-completion-minimum-prefix-length 0
+                      auto-completion-complete-with-key-sequence "jk"
                       auto-completion-enable-help-tooltip t
+                      auto-completion-use-company-box t
                       auto-completion-enable-sort-by-usage nil
                       auto-completion-enable-snippets-in-popup nil)
      ;; better-defaults
@@ -333,6 +334,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq secret-file (expand-file-name ".secret.el" dotspacemacs-directory))
   (load secret-file)
+  ;; (global-company-mode)
  )
 
 ;; if custom-file variable is enabled, custom-set-variables will be written to custom-file automatically
