@@ -66,8 +66,8 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
 									  ivy
-                                      yasnippet-snippets
-                                      dash
+                    yasnippet-snippets
+                    dash
 									  (ox-pandoc :location
 												 (recipe :fetcher github
 														 :repo kawabata/ox-pandoc))
