@@ -30,3 +30,8 @@ emacs
 
 ## python ##
 
+### python 懒加载包不能补全问题（tensorflow.keras）
+
+   jedi settings: auto import modules ， 可以直接修改jedi包中的settings.py 中的auto_import_modules属性
+   https://github.com/davidhalter/jedi/issues/1391
+   https://jedi.readthedocs.io/en/latest/docs/settings.html
