@@ -3,7 +3,7 @@
 
 pip install --upgrade  pip
 
-pip install -r requirements.txt
+pip install -r --upgrade requirements.txt
 
-npm install -g vmd
+# npm install -g vmd
 

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name:flags 
+# key: flag
+# --
+
+from absl import flags
+
+FLAGS = flags.FLAGS
