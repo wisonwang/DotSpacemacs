@@ -3,6 +3,12 @@
 # key: flag
 # --
 
-from absl import flags
+from absl import app, flags
+from absl.flags import FLAGS
 
-FLAGS = flags.FLAGS
+
+def main(_argv):
+    pass
+
+if __name__ == '__main__':
+    app.run(main)

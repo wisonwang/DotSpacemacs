@@ -2,6 +2,7 @@ jedi>=0.18.1
 json-rpc>=1.8.1
 service_factory>=0.1.5
 notebook
+ipython
 # ipython==6.4.0
 flake8
 autopep8

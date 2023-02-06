@@ -36,7 +36,7 @@
 ;; python 编码设置
 (setenv "PYTHONIOENCODING" "utf-8")
 ;; golang
-(setenv "GO111MODULE" "auto")
+(setenv "GO111MODULE" "on")
 (setenv "GOROOT" "")
 (setq global-visual-line-mode t)
 
@@ -82,9 +82,9 @@
 
 (setq go-test-verbose "-v -x")
 
-(eval-after-load `go
-  `(progn
-	 (setq flycheck-golangci-lint-disable-linters (list "unused"))))
+;; (eval-after-load `go
+;;   `(progn
+;; 	 (setq flycheck-golangci-lint-disable-linters (list "unused"))))
 
 (eval-after-load `org-mode
   `(progn
@@ -170,7 +170,7 @@
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(evil-want-Y-yank-to-eol nil)
  '(exec-path
-   '("/Users/vincent/.pyenv/plugins/pyenv-virtualenv/shims" "/Users/vincent/.pyenv/shims" "/Users/vincent/.pyenv/bin" "/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin" "/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14" "." "/Users/vincent/Downloads/apache-jmeter-5.3/bin" "/Users/vincent/Downloads" "/usr/local/bin" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/Users/vincent/go/bin"))
+   '("/Users/vincent/.pyenv/plugins/pyenv-virtualenv/shims" "/Users/vincent/.pyenv/shims" "/Users/vincent/.pyenv/bin" "/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin" "/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14" "." "/Users/vincent/Downloads/apache-jmeter-5.3/bin" "/Users/vincent/Downloads" "/usr/local/bin" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/Users/vincent/go/bin" "/Users/vincent/.nvm/versions/node/v16.17.0/bin"))
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
      ("NEXT" . "#dc752f")
@@ -187,10 +187,12 @@
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
+ '(lsp-response-timeout 3)
  '(markdown-command "pandoc")
  '(package-selected-packages
-   '(ob-ipython youdao-dictionary chinese-word-at-point yasnippet-snippets writeroom-mode visual-fill-column wgrep vterm queue treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toml-mode terminal-here systemd symon symbol-overlay string-inflection string-edit sql-indent sphinx-doc spaceline-all-the-icons memoize smex ron-mode racer rust-mode quickrun pydoc prettier-js poetry plantuml-mode pippel pipenv password-generator pandoc-mode ox-pandoc overseer orgit-forge org-superstar org-sticky-header org-rich-yank org-re-reveal org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org npm-mode nodejs-repl nginx-mode mvn multi-line shut-up meghanada maven-test-mode lsp-ui lsp-python-ms lsp-pyright lsp-origami origami lsp-java lsp-ivy json-navigator hierarchy journalctl-mode ivy-yasnippet ivy-xref ivy-rtags ivy-purpose window-purpose imenu-list ivy-hydra ivy-avy importmagic epc concurrent impatient-mode groovy-mode groovy-imports pcache google-c-style godoctor go-tag go-rename go-impl go-gen-test go-fill-struct gnuplot gitignore-templates git-modes gendoxy geben forge yaml closql emacsql-sqlite emacsql treepy magit-section transient flycheck-ycmd flycheck-rust flycheck-rtags flycheck-package package-lint flycheck-elsa flycheck-clang-tidy evil-textobj-line evil-terminal-cursor-changer evil-org evil-lion evil-goggles evil-easymotion evil-collection annalist evil-cleverparens engine-mode emr paredit list-utils elisp-def polymode anaphora editorconfig drag-stuff disaster dired-quick-sort devdocs dash-at-point dap-mode lsp-treemacs bui treemacs cfrs pfuture posframe cpp-auto-include counsel-projectile counsel-dash dash-docs counsel-css counsel swiper ivy company-ycmd ycmd company-tabnine unicode-escape company-rtags rtags company-quickhelp company-phpactor phpactor composer php-runtime company-php ac-php-core xcscope company-c-headers company-box frame-local cmake-mode cmake-ide levenshtein clang-format centered-cursor-mode ccls lsp-mode cargo cal-china-x blacken all-the-icons nameless font-lock+ projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy))
+   '(nameless font-lock+ projectile-sift org-projectile php-extras flycheck-gometalinter xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ein request-deferred websocket deferred csv-mode erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks flycheck-pos-tip pos-tip flycheck noflet ensime sbt-mode scala-mode phpunit phpcbf php-auto-yasnippets drupal-mode php-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data org2nikola yaml-mode org-page git htmlize mustache ht blog-admin names ctable web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-company helm-c-yasnippet fuzzy company-tern tern company-statistics company-go company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete coffee-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic go-guru go-eldoc go-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup evil-unimpaired f s which-key undo-tree hydra dash async aggressive-indent adaptive-wrap ace-window avy))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
+ '(pyenv-mode t)
  '(safe-local-variable-values
    '((org-id-locations-file "~/workspace/note/.org-id-locations")
      (org-id-track-globally t)
@@ -199,9 +201,11 @@
      (javascript-backend . tide)
      (javascript-backend . tern)
      (javascript-backend . lsp)))
+ '(savehist-mode nil)
  '(sqlfmt-options nil)
+ '(warning-suppress-types '((emacs) (emacs) (emacs) (emacs)))
  '(yas-snippet-dirs
-   '("/Users/vincent/workspace/DotSpacemacs/private/snippets/" "/Users/vincent/.emacs.d/private/snippets/" "/Users/vincent/.emacs.d/layers/+completion/auto-completion/local/snippets" yasnippet-snippets-dir) t))
+   '("/Users/vincent/workspace/DotSpacemacs/private/snippets/" "/Users/vincent/.emacs.d/private/snippets/" "/Users/vincent/.emacs.d/layers/+completion/auto-completion/local/snippets" yasnippet-snippets-dir)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

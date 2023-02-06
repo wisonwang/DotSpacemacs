@@ -45,12 +45,12 @@
 									                    (ipython-notebook :variables ein-backend 'jupyter)
                                       ;; golang
                                       (go :variables
-                                          ;; gofmt-command "goimports"
+                                          gofmt-command "goimports"
                                           ;; go-use-golangci-lint t
 										                      go-format-before-save t
-										                      ;; go-backend 'go-mode
-                                          go-backend 'lsp
-										                      ;; godoc-at-point-function 'godoc-gogetdoc
+										                      go-backend 'go-mode
+                                          ;; go-backend 'lsp
+										                      godoc-at-point-function 'godoc-gogetdoc
                                           )
                                      
                                       (sql :variables
@@ -96,6 +96,9 @@
 									                    ;; 		  elfeed-enable-web-interface t
  									                    ;; 		  rmh-elfeed-org-files (list "~/workspace/note/elfeed.org"))
 
+                                      (solidity :variables
+                                                solidity-flycheck-solium-checker-active t
+                                                solidity-flycheck-solc-checker-active t)
                                       ))
 
 
